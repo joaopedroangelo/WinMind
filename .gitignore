@@ -1,0 +1,24 @@
+# Diretórios e arquivos do Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.whl
+.env
+.venv
+venv/
+ENV/
+env/
+
+# Arquivos do VS Code
+.vscode/
+
+# Arquivos de log
+*.log
+
+# Arquivos de sistema operacional (MacOS, Windows)
+.DS_Store
+Thumbs.db
+
+# Dependências do AutoGen
+autoenv/
