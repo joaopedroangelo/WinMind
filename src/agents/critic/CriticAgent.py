@@ -1,31 +1,26 @@
 from autogen import ConversableAgent
-import openai
+from openai import OpenAI
 import os
 
-# Recuperando a chave da variável de ambiente
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
-class CriticAgent(ConversableAgent):
-
-    def __init__(self, name: str):
-        super().__init__(
-            name=name,
-            llm_config={
-                "model": "gpt-4",  # Ou o modelo que você deseja usar
-                "api_key": openai.api_key,
-            },
-            system_message=
-                "Você é um agente crítico."
-                "Seu trabalho é refletir sobre as respostas geradas e sugerir melhorias."
-        )
+# Carrega a chave da API e # verifica se o carregamento deu certo
+api_key = os.getenv("OPENAI_API_KEY").strip()  # Remove qualquer caractere extra
+if not api_key:
+    print("Erro: chave da API não encontrada.")
+    exit(1)
 
 
-    def provide_feedback(self, message: str) -> str:
-        prompt = f"Gere feedback construtivo para a seguinte resposta: {message}"
-        response = openai.chat_completions.create(
-            model="gpt-4",  # Ou o modelo que você escolheu
-            messages=[
-                {"role": "user", "content": prompt}
-            ]
-        )
-        return response['choices'][0]['message']['content']
+# LLM config
+llm_config = {
+    "model": "gpt-3.5-turbo",
+    "api_key": api_key
+}
+
+
+criticAgent = ConversableAgent(
+    name = "Critic",
+    llm_config = llm_config,
+    system_message = 
+        "You are a critic." +
+        "You operate in a sports betting system." +
+        "Give feedback on the messages you receive so that they can be improved."
+)

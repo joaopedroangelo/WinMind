@@ -1,42 +1,26 @@
-import time
-from autogen import Agent, Message
+from autogen import ConversableAgent
+from openai import OpenAI
+import os
 
-class DirectCommunicationAgent(Agent):
-
-    # Construtor
-    def __init__(self, name):
-        super().__init__(name)
-    
-
-    def process_message(self, message: Message):
-        """
-        Método para processar mensagens recebidas de outros agentes
-        e enviá-las para o usuário. Este método pode ser chamado
-        quando o agente recebe uma mensagem de qualquer outro agente.
-        """
-        # Aqui, você pode personalizar como processar as mensagens.
-        # Vamos assumir que a mensagem possui um conteúdo textual.
-        print(f"{self.name} recebeu uma mensagem: {message.content}")
-        
-        # Envia a mensagem para o usuário (no caso, imprimindo-a)
-        self.send_to_user(message.content)
+# Carrega a chave da API e # verifica se o carregamento deu certo
+api_key = os.getenv("OPENAI_API_KEY").strip()  # Remove qualquer caractere extra
+if not api_key:
+    print("Erro: chave da API não encontrada.")
+    exit(1)
 
 
-    def send_to_user(self, message_content):
-        """
-        Método para enviar a mensagem para o usuário.
-        Aqui, você pode integrar com qualquer sistema de interface com o usuário.
-        No exemplo, apenas imprimimos a mensagem.
-        """
-        print(f"Enviando mensagem para o usuário: {message_content}")
-        # Adicionar lógica de envio real aqui (e.g., API de interface com o usuário)
+# LLM config
+llm_config = {
+    "model": "gpt-3.5-turbo",
+    "api_key": api_key
+}
 
 
-    def run(self):
-        """
-        Método que mantém o agente em execução, esperando por novas mensagens.
-        """
-        while True:
-            # Aqui o agente ficaria aguardando por novas mensagens.
-            # Este é um exemplo simples; o AutoGen tem seus próprios métodos para receber mensagens.
-            time.sleep(5)  # Aguardar 5 segundos antes de verificar por novas mensagens.
+directCommunicationAgent = ConversableAgent(
+    name = "DirectCommunication",
+    llm_config = llm_config,
+    system_message = 
+        "You are a communicator." +
+        "You operate in a sports betting system." +
+        "You receive messages and forward them to the user."
+)

@@ -16,11 +16,10 @@ llm_config = {
 }
 
 
-interventionAgent = ConversableAgent(
-    name = "Intervenor",
+captureDataAgent = ConversableAgent(
+    name = "CaptureData",
     llm_config = llm_config,
     system_message = 
-        "You are a Intervenor." +
-        "You operate in a sports betting system." +
-        "You will lock the system when prompted to do so."
+        "You operate in a sports betting system" +
+        "Its responsibility is to collect user data and pass it on to the monitor for analysis."
 )

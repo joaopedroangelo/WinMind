@@ -1,16 +1,17 @@
 import os
 from openai import OpenAI
 
-# Carrega a chave da API diretamente
+# Carrega a chave da API
 api_key = os.getenv("OPENAI_API_KEY").strip()  # Remove qualquer caractere extra
-
 if api_key:
     print("Chave da API carregada com sucesso!")
 else:
     print("Erro: A chave da API não foi carregada.")
 
+
 # Criando o cliente com a chave da API
 client = OpenAI(api_key=api_key)
+
 
 # Testando a API
 try:
