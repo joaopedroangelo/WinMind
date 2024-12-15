@@ -1,4 +1,4 @@
-from autogen import ConversableAgent
+from autogen import AssistantAgent
 from openai import OpenAI
 import os
 
@@ -16,7 +16,7 @@ llm_config = {
 }
 
 
-captureDataAgent = ConversableAgent(
+captureDataAgent = AssistantAgent(
     name = "CaptureData",
     llm_config = llm_config,
     system_message = 
