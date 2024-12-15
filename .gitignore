@@ -1,5 +1,7 @@
 # Diretórios e arquivos do Python
 __pycache__/
+/source
+.cache/
 *.py[cod]
 *.pyo
 *.pyd
