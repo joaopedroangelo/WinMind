@@ -2,6 +2,7 @@ from autogen import AssistantAgent
 import os
 
 class CriticAgent:
+    
     def __init__(self):
         self.system_message = """
         You are the CriticAgent in a system designed to help users manage gambling addiction in sports betting.

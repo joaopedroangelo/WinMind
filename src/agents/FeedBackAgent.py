@@ -2,6 +2,7 @@ from autogen import AssistantAgent
 import os
 
 class FeedBackAgent:
+    
     def __init__(self):
         self.system_message = """
         You are the FeedBackAgent in a system designed to help users manage gambling addiction in sports betting.

@@ -2,6 +2,7 @@ from autogen import AssistantAgent
 import os
 
 class MonitoringAgent:
+    
     def __init__(self):
         self.system_message = """
         You are the MonitoringAgent in a system designed to help users control their gambling addiction in sports betting.

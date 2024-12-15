@@ -2,6 +2,7 @@ from autogen import AssistantAgent
 import os
 
 class DirectCommunicationAgent:
+    
     def __init__(self):
         self.system_message = """
         You are the DirectCommunicationAgent in a system designed to help users manage gambling addiction in sports betting.
