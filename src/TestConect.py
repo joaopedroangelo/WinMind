@@ -1,6 +1,7 @@
 import os
 from openai import OpenAI
 
+
 # Carrega a chave da API
 api_key = os.getenv("OPENAI_API_KEY").strip()  # Remove qualquer caractere extra
 if api_key:

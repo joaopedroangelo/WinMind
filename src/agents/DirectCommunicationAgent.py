@@ -8,7 +8,7 @@ class DirectCommunicationAgent:
         self.name = self.get_name()
         self.description = self.get_description()
         self.llm_config = LLM_Config.get_llmconfig()
-        self.agentConversable = self.get_agent()
+        self.agent = self.get_agent()
 
 
     def get_system_message(self):

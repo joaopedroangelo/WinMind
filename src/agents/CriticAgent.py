@@ -1,4 +1,4 @@
-from autogen import AssistantAgent
+from autogen import ConversableAgent
 from services.LLM_Config import LLM_Config
 
 class CriticAgent:
@@ -8,7 +8,7 @@ class CriticAgent:
         self.name = self.get_name()
         self.description = self.get_description()
         self.llm_config = LLM_Config.get_llmconfig()
-        self.agentAssistant = self.get_agent()
+        self.agent = self.get_agent()
 
 
     def get_system_message(self):
@@ -35,7 +35,21 @@ class CriticAgent:
 
 
     def get_agent(self):
-        return AssistantAgent(name=self.name,
+        return ConversableAgent(name=self.name,
                               system_message=self.system_message,
                               description=self.description,
                               llm_config=self.llm_config)
+
+
+    def generate_review(self, message):
+        # Estrutura da interação com "agent" como remetente
+        messages = [
+            {"role": "system", "content": self.system_message},
+            {"role": "assistant", "content": message}
+        ]
+
+        # Gera a crítica com base na mensagem do agente
+        response = self.agent.generate_reply(messages=messages)
+    
+        # Retorna o conteúdo da resposta gerada pela LLM
+        return response
