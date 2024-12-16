@@ -13,12 +13,12 @@ class MonitoringAgent:
         - Indicators of problematic behavior, such as sudden increases in betting amounts.
         Use clear and actionable language in your report.
         """
-        self.name = "MonitorAgent"
+        self.name = "MonitoringAgent"
         self.llm_config = LLM_Config.get_llmconfig()
+        self.agentAssistant = self.get_agent()
 
 
     def get_agent(self):
         return AssistantAgent(name=self.name,
                               system_message=self.system_message,
-                              llm_config=self.get_llmconfig
-                              )
+                              llm_config=self.llm_config)
