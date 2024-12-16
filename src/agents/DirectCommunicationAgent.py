@@ -36,3 +36,7 @@ class DirectCommunicationAgent:
                                 system_message=self.system_message,
                                 description=self.description,
                                 llm_config=self.llm_config)
+
+
+    def send_direct(self, message):
+        print(message)
