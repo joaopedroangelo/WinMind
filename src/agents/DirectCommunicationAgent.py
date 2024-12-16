@@ -1,5 +1,5 @@
-from autogen import AssistantAgent
-import os
+from autogen import ConversableAgent
+from services.LLM_Config import LLM_Config
 
 class DirectCommunicationAgent:
     
@@ -9,23 +9,14 @@ class DirectCommunicationAgent:
         Your role is to directly communicate with the user, relaying messages from other agents without modification.
         You must ensure clarity and professionalism in all interactions.
         """
-
-
-    @staticmethod
-    def get_llmconfig():
-        api_key = os.getenv("OPENAI_API_KEY").strip()
-        if not api_key:
-            print("Error: API key not found.")
-            exit(1)
-        llm_config = {
-            "model": "gpt-3.5-turbo",
-            "api_key": api_key
-        }
-        return llm_config
+        self.name = "DirectCommunicationAgent"
+        self.llm_config = LLM_Config.get_llmconfig()
+        # Criando a instância de ConversableAgent no momento da inicialização
+        self.agentConversable = self.get_agent()
 
 
     def get_agent(self):
-        return AssistantAgent(name="DirectCommunicationAgent",
+        return ConversableAgent(name=self.name,
                               system_message=self.system_message,
                               llm_config=self.get_llmconfig
                               )

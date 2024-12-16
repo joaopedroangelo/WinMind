@@ -1,5 +1,5 @@
 from autogen import AssistantAgent
-import os
+from services.LLM_Config import LLM_Config
 
 class CriticAgent:
     
@@ -11,23 +11,14 @@ class CriticAgent:
         If the response is accurate and complete, forward it to the DirectCommunicationAgent for delivery to the user.
         Use critical thinking and ensure the highest quality in all interactions.
         """
-
-
-    @staticmethod
-    def get_llmconfig():
-        api_key = os.getenv("OPENAI_API_KEY").strip()
-        if not api_key:
-            print("Error: API key not found.")
-            exit(1)
-        llm_config = {
-            "model": "gpt-3.5-turbo",
-            "api_key": api_key
-        }
-        return llm_config
+        self.name = "CriticAgent"
+        self.llm_config = LLM_Config.get_llmconfig()
+        # Criando a instância de AssistantAgent no momento da inicialização
+        self.agentAssistant = self.get_agent()
 
 
     def get_agent(self):
-        return AssistantAgent(name="CriticAgent",
+        return AssistantAgent(name=self.name,
                               system_message=self.system_message,
                               llm_config=self.get_llmconfig
                               )

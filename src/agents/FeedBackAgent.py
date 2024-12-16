@@ -1,5 +1,5 @@
 from autogen import AssistantAgent
-import os
+from services.LLM_Config import LLM_Config
 
 class FeedBackAgent:
     
@@ -12,23 +12,13 @@ class FeedBackAgent:
         - Suggest actionable steps to reduce risky behavior.
         - Be empathetic and encouraging.
         """
-
-
-    @staticmethod
-    def get_llmconfig():
-        api_key = os.getenv("OPENAI_API_KEY").strip()
-        if not api_key:
-            print("Error: API key not found.")
-            exit(1)
-        llm_config = {
-            "model": "gpt-3.5-turbo",
-            "api_key": api_key
-        }
-        return llm_config
+        self.name = "FeedBackAgent"
+        self.llm_config = LLM_Config.get_llmconfig()
+        self.agentAssistant =  self.get_agent()
 
 
     def get_agent(self):
-        return AssistantAgent(name="FeedBackAgent",
+        return AssistantAgent(name=self.name,
                               system_message=self.system_message,
                               llm_config=self.get_llmconfig
                               )

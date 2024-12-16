@@ -1,5 +1,5 @@
 from autogen import AssistantAgent
-import os
+from services.LLM_Config import LLM_Config
 
 class MonitoringAgent:
     
@@ -13,24 +13,12 @@ class MonitoringAgent:
         - Indicators of problematic behavior, such as sudden increases in betting amounts.
         Use clear and actionable language in your report.
         """
-
-
-    @staticmethod
-    def get_llmconfig():
-        api_key = os.getenv("OPENAI_API_KEY").strip()
-        if not api_key:
-            print("Erro: chave da API não encontrada.")
-            exit(1)
-        llm_config = {
-            "model": "gpt-3.5-turbo",
-            "api_key": api_key
-        }
-        return llm_config
-
+        self.name = "MonitorAgent"
+        self.llm_config = LLM_Config.get_llmconfig()
 
 
     def get_agent(self):
-        return AssistantAgent(name="MonitoringAgent",
+        return AssistantAgent(name=self.name,
                               system_message=self.system_message,
                               llm_config=self.get_llmconfig
                               )
