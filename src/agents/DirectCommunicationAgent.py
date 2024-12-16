@@ -34,4 +34,5 @@ class DirectCommunicationAgent:
     def get_agent(self):
         return ConversableAgent(name=self.name,
                                 system_message=self.system_message,
+                                description=self.description,
                                 llm_config=self.llm_config)

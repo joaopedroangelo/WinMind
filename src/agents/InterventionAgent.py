@@ -40,5 +40,6 @@ class InterventionAgent:
     def get_agent(self):
         return AssistantAgent(name=self.name,
                               system_message=self.system_message,
+                              description=self.description,
                               llm_config=self.get_llmconfig
                               )
