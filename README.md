@@ -6,7 +6,39 @@
 
 ---
 ## Multi-Agent Architecture
-The system is built on a modular multi-agent framework that promotes collaboration and specialization. Each agent has a clearly defined role, ensuring streamlined functionality and efficiency.
+
+> The system is built on a modular multi-agent framework that promotes collaboration and specialization.
+> Each agent has a clearly defined role, ensuring streamlined functionality and efficiency.
+
+```lua
+        +-------------------+
+        | CaptureDataAgent  | -------|
+        +-------------------+        |                       
+                                     |                       
+                                     v                       
+  +-------------------+   +-------------------+    +-------------------+
+  | InterventionAgent | <-|  MonitoringAgent  | -> |  FeedbackAgent    |
+  +-------------------+   +-------------------+    +-------------------+
+                  \                 |                  /
+                   \                |                 /
+                    +---------------+----------------+
+                                    |
+                                    v
+                         +-------------------+
+                         |    CriticAgent    |
+                         +-------------------+
+                                    |
+                                    v
+                         +-------------------+
+                         | DirectCommunication|
+                         +-------------------+
+                                    |
+                                    v
+                         +-------------------+
+                         |      Usuário      |
+                         +-------------------+
+```
+
 
 ---
 ## Agents
