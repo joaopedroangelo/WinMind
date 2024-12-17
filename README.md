@@ -74,3 +74,8 @@
 
 - **LLM Integration**:
   - Leverages Large Language Models (LLMs) for natural language processing and decision-making.
+
+---
+## Credits
+- João Pedro Carneiro Angelo (carneiroangelojoaopedro@gmail.com)
+- Lucas Raniere
