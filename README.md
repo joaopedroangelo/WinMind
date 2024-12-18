@@ -78,4 +78,4 @@
 ---
 ## Credits
 - João Pedro Carneiro Angelo (carneiroangelojoaopedro@gmail.com)
-- Lucas Raniere (github.com/lucasraniere)
+- Lucas Raniere ([github.com/lucasraniere](https://github.com/lucasraniere))
