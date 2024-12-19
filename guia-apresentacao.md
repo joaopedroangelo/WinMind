@@ -60,7 +60,7 @@ class CriticAgent:
 ```
 
 ---
-### Slide 06 e 07 *(4 minutos)*
+### Slide 06 e 07 *(2 minutos)*
 O processo de reflexão refere-se à capacidade do agente reformular a sua resposta, baseado nas sugestões de melhorias feitas por outro agente (crítico).
 
 **Como funciona o processo?**
@@ -163,7 +163,7 @@ Open-Source LLMs: LangGraph — Integrates well with open-source LLMs and suppor
 Best community support: AutoGen has decent community support helping you with out-of-the-way issues
 
 ---
-### Slide 19 e 20 *(2 minutos)*
+### Slide 19*(2 minutos)*
 (02/10/24) O AutoGen 0.4 é uma reescrita do zero do AutoGen. Saiba mais sobre a história, objetivos e futuro nesta postagem do blog. Estamos animados para trabalhar com a comunidade para obter feedback, refinar e melhorar o projeto antes de lançarmos oficialmente o 0.4. Esta é uma grande mudança, então o AutoGen 0.2 ainda está disponível, suspenso e desenvolvido na ramificação 0.2.
 
 Os primeiros contribuidores e criadores do AutoGen se afastaram do repositório oficial da Microsoft e renomearam sua versão como AG2. Esta não é uma nova estrutura - é basicamente o AutoGen 0.2.34 continuando sob um novo nome, agora na versão 0.3.2. Seu objetivo? Mantê-lo impulsionado pela comunidade e manter a arquitetura com a qual você está familiarizado.
@@ -176,7 +176,7 @@ Mantendo o AG2? Seu código está seguro; é retrocompatível.
 Mantendo o Microsoft 0.2? Planeje o trabalho de migração potencial quando o 0.4 for lançado.
 
 ---
-### Slide 21 e Começo da Problemática - Contexto *(4 minutos)*
+### Slide 20 e Começo da Problemática - Contexto *(4 minutos)*
 
 ---
 ### Aplicação - Definição dos Agentes e Arquitetura *(4 minutos)*
