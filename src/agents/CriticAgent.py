@@ -1,58 +1,29 @@
 from autogen import ConversableAgent
 from services.LLM_Config import LLM_Config
-from agents.DirectCommunicationAgent import DirectCommunicationAgent
+
+DESCRIPTION = (
+    'Você é o CriticAgent em um sistema projetado para ajudar os usuários a controlar o vício em\n'
+    'apostas online. Seu papel é avaliar e criticar respostas de outros agentes no sistema.\n'
+    'Se a resposta não for satisfatória, forneça feedback construtivo e solicite uma revisão ao FeedbackAgent.\n'
+    'Se a resposta for precisa e completa, encaminhe-a ao DirectCommunicationAgent para entrega ao usuário.\n'
+    'Use o pensamento crítico e garanta a mais alta qualidade em todas as interações.'
+)
+
+SYSTEM_MESSAGE = (
+    'Avalia e critica respostas de outros agentes no sistema para garantir precisão, clareza e qualidade.\n'
+    'Fornece feedback para melhoria e encaminha respostas finalizadas ao DirectCommunicationAgent para entrega ao usuário.'
+)
 
 class CriticAgent:
-    
+
     def __init__(self):
-        self.system_message = self.get_system_message()
-        self.name = self.get_name()
-        self.description = self.get_description()
-        self.llm_config = LLM_Config.get_llmconfig()
-        self.agent = self.get_agent()
-        self.direct_communication_agent = DirectCommunicationAgent()
-
-
-    def get_system_message(self):
-        return """
-            You are the CriticAgent in a system designed to help users manage gambling addiction 
-            in sports betting. Your role is to evaluate and critique responses from other agents 
-            in the system. If the response is unsatisfactory, provide constructive feedback and 
-            request a revision. If the response is accurate and complete, forward it to the 
-            DirectCommunicationAgent for delivery to the user. Use critical thinking and ensure 
-            the highest quality in all interactions.
-        """
-
-
-    def get_name(self):
-        return "CriticAgent"
-
-
-    def get_description(self):
-        return """
-            Evaluates and critiques responses from other agents in the system to ensure 
-            accuracy, clarity, and quality. Provides feedback for improvement and forwards 
-            finalized responses to the DirectCommunicationAgent for user delivery.
-        """
+        self.agent = ConversableAgent(
+            name="CriticAgent",
+            system_message=SYSTEM_MESSAGE.strip(),
+            description=DESCRIPTION.strip(),
+            llm_config=LLM_Config.get_llmconfig(),
+        )
 
 
     def get_agent(self):
-        return ConversableAgent(name=self.name,
-                                system_message=self.system_message,
-                                description=self.description,
-                                llm_config=self.llm_config)
-
-
-    def generate_review(self, message):
-        messages = [
-            {"role": "system", "content": self.system_message},
-            {"role": "assistant", "content": message}
-        ]
-        # Gera a crítica com base na mensagem do agente
-        response = self.agent.generate_reply(messages=messages)
-        # Retorna o conteúdo da resposta gerada pela LLM
-        return response
-    
-
-    def forward_to_direct_communication(self, message):
-        self.direct_communication_agent.send_direct(message)
+        return self.agent
