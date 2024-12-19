@@ -1,5 +1,7 @@
 # Guia de Apresentação do WinMind
 
+> Slides: https://www.canva.com/design/DAGZYZspJIY/oklmQeol3FR3ev468I-Zgw/edit?ui=eyJFIjp7IkE_IjoiTiIsIlMiOiJBQUZTM2R6a0NVVSIsIlQiOjd9fQ
+
 ---
 ### Slide 01 e 02 *(1 minuto)*
 Realizar uma apresentação abrangente sobre o sistema **WinMind**, destacando o potencial do framework **AutoGen** e sua evolução com o **AG2**,
