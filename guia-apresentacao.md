@@ -3,12 +3,12 @@
 > Slides: https://www.canva.com/design/DAGZYZspJIY/oklmQeol3FR3ev468I-Zgw/edit?ui=eyJFIjp7IkE_IjoiTiIsIlMiOiJBQUZTM2R6a0NVVSIsIlQiOjd9fQ
 
 ---
-### Slide 01 e 02 *(1 minuto)*
+### Slide 01 e 02 (1 minuto)
 Realizar uma apresentação abrangente sobre o sistema **WinMind**, destacando o potencial do framework **AutoGen** e sua evolução com o **AG2**,
 seguida por uma análise do problema do vício em apostas e como o WinMind o aborda.
 
 ---
-### Slide 03 *(2 minutos)*
+### Slide 03 (2 minutos)
 
 **O que é AutoGen?**<br>
 O AutoGen é um framework projetado para simplificar a criação de sistemas multiagentes colaborativos utilizando Modelos de Linguagem (LLMs).
@@ -21,7 +21,7 @@ Ele fornece ferramentas para:
 > Abaixo, detalho melhor as características acima.
 
 ---
-### Slide 04 e 05 *(3 minutos)* 
+### Slide 04 e 05 (3 minutos)
 Como o próprio nome sugere, a programação conversacional permite que os desenvolvedores definam de forma eficiente como os agentes se comunicam, trocam informações
 e tomam decisões em um sistema orientado por diálogos.
 
@@ -60,7 +60,7 @@ class CriticAgent:
 ```
 
 ---
-### Slide 06 e 07 *(2 minutos)*
+### Slide 06 e 07 (2 minutos)
 O processo de reflexão refere-se à capacidade do agente reformular a sua resposta, baseado nas sugestões de melhorias feitas por outro agente (crítico).
 
 **Como funciona o processo?**
@@ -71,7 +71,7 @@ O processo de reflexão refere-se à capacidade do agente reformular a sua respo
 5. Envio Final
 
 ---
-### Slide 08 e 09 *(2 minutos)*
+### Slide 08 e 09 (2 minutos)
 Agente de Conversa: Essa classe é uma abstração que facilita a definição de agentes que interagem entre si ou com sistemas externos por meio de mensagens estruturadas.
 
 A classe ConversableAgent encapsula o mecanismo de envio e recepção de mensagens, permitindo que os agentes troquem informações de maneira eficiente.
@@ -90,7 +90,7 @@ Inclui mecanismos para rastrear o estado de uma conversa ou interação.
 3. Integração com fluxos modernos: A arquitetura facilita a integração de IA em sistemas já existentes, incluindo pipelines automatizados.
 
 ---
-### Slide 10 e 11 *(2 minutos)*
+### Slide 10 e 11 (2 minutos)
 Sobre o agente assistente:<br>
 São agentes orientados a tarefas que auxiliam em tarefas específicas, frequentemente fornecendo conhecimento especializado ou realizando ações com base em solicitações do usuário. Eles são bem adequados para suporte técnico, assistência em pesquisa ou qualquer tarefa que exija conhecimento especializado.
 
@@ -127,7 +127,7 @@ Em um sistema de suporte técnico, diferentes agentes (diagnóstico, solução e
 Vantagem: Promove colaboração entre agentes com diferentes habilidades e conhecimentos, aumentando a eficiência e a qualidade das respostas.
 
 ---
-### Slide 16 *(2 minutos)*
+### Slide 16 (2 minutos)
 Problemas Comuns:
 Restrições na modificação de padrões de interação.
 Dificuldade em integrar lógicas complexas ou comportamentos personalizados em agentes.
@@ -138,7 +138,7 @@ Limitações na adaptação a situações em tempo real, onde o comportamento do
 A depuração de fluxos de conversa baseados em agentes pode ser um processo desafiador devido à natureza não determinística dos modelos de linguagem e à falta de ferramentas específicas para análise.
 
 ---
-### Slide 17 e 18 *(5 minutos)*
+### Slide 17 e 18 (3 minutos)
 Semelhanças: 
 São escritos em Python
 São projetados para criar agentes de IA
@@ -163,7 +163,7 @@ Open-Source LLMs: LangGraph — Integrates well with open-source LLMs and suppor
 Best community support: AutoGen has decent community support helping you with out-of-the-way issues
 
 ---
-### Slide 19*(2 minutos)*
+### Slide 19 (2 minutos)
 (02/10/24) O AutoGen 0.4 é uma reescrita do zero do AutoGen. Saiba mais sobre a história, objetivos e futuro nesta postagem do blog. Estamos animados para trabalhar com a comunidade para obter feedback, refinar e melhorar o projeto antes de lançarmos oficialmente o 0.4. Esta é uma grande mudança, então o AutoGen 0.2 ainda está disponível, suspenso e desenvolvido na ramificação 0.2.
 
 Os primeiros contribuidores e criadores do AutoGen se afastaram do repositório oficial da Microsoft e renomearam sua versão como AG2. Esta não é uma nova estrutura - é basicamente o AutoGen 0.2.34 continuando sob um novo nome, agora na versão 0.3.2. Seu objetivo? Mantê-lo impulsionado pela comunidade e manter a arquitetura com a qual você está familiarizado.
@@ -176,16 +176,16 @@ Mantendo o AG2? Seu código está seguro; é retrocompatível.
 Mantendo o Microsoft 0.2? Planeje o trabalho de migração potencial quando o 0.4 for lançado.
 
 ---
-### Slide 20 e Começo da Problemática - Contexto *(4 minutos)*
+### Slide 20 e Começo da Problemática - Contexto (4 minutos)
 
 ---
-### Aplicação - Definição dos Agentes e Arquitetura *(4 minutos)*
+### Aplicação - Definição dos Agentes e Arquitetura (4 minutos)
 
 ---
-### Aplicação - O que é um usuário viciado *(3 minutos)*
+### Aplicação - O que é um usuário viciado (3 minutos)
 
 ---
-### Aplicação - Explicação da comunicação entre agentes *(5 minutos)*
+### Aplicação - Explicação da comunicação entre agentes (5 minutos)
 
 ---
-### Aplicação - Execução *(5 minutos)*
+### Aplicação - Execução (5 minutos)
