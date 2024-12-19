@@ -163,10 +163,17 @@ Open-Source LLMs: LangGraph — Integrates well with open-source LLMs and suppor
 Best community support: AutoGen has decent community support helping you with out-of-the-way issues
 
 ---
-### Slide 19 *(1 minuto)*
+### Slide 19 e 20 *(2 minutos)*
+(02/10/24) O AutoGen 0.4 é uma reescrita do zero do AutoGen. Saiba mais sobre a história, objetivos e futuro nesta postagem do blog. Estamos animados para trabalhar com a comunidade para obter feedback, refinar e melhorar o projeto antes de lançarmos oficialmente o 0.4. Esta é uma grande mudança, então o AutoGen 0.2 ainda está disponível, suspenso e desenvolvido na ramificação 0.2.
 
----
-### Slide 20 e Site do AG2 *(4 minutos)*
+Os primeiros contribuidores e criadores do AutoGen se afastaram do repositório oficial da Microsoft e renomearam sua versão como AG2. Esta não é uma nova estrutura - é basicamente o AutoGen 0.2.34 continuando sob um novo nome, agora na versão 0.3.2. Seu objetivo? Mantê-lo impulsionado pela comunidade e manter a arquitetura com a qual você está familiarizado.
+
+Enquanto isso, a Microsoft está levando o AutoGen em uma direção diferente. Eles estão mantendo a versão 0.2 enquanto trabalham em uma reescrita completa com a versão 0.4, que pode até mesmo ser mesclada em outras estruturas da MS, como o Semantic Kernel.
+
+Então, o que você deve fazer se estiver executando o AutoGen em produção:
+Mantendo o AG2? Seu código está seguro; é retrocompatível.
+
+Mantendo o Microsoft 0.2? Planeje o trabalho de migração potencial quando o 0.4 for lançado.
 
 ---
 ### Slide 21 e Começo da Problemática - Contexto *(4 minutos)*
