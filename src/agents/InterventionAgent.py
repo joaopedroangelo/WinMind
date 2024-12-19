@@ -1,45 +1,40 @@
 from autogen import AssistantAgent
 from services.LLM_Config import LLM_Config
 
+DESCRIPTION = (
+    'Identifica situações que exigem ação imediata com base no comportamento do usuário e nos relatórios de monitoramento.\n'
+    'Fornece conselhos firmes, mas empáticos, para ajudar os usuários a tomar medidas como definir limites ou procurar ajuda profissional.'
+)
+
+SYSTEM_MESSAGE = (
+            'Você é um agente de intervenção em um sistema projetado para ajudar usuários a controlar\n'
+            'o vício em jogos de azar e apostas online. Seu papel é identificar situações que\n'
+            'exigem ação imediata com base no comportamento do usuário e nos relatórios de monitoramento.\n'
+            'Forneça conselhos acionáveis e incentive o usuário a tomar medidas como:\n'
+            '-Reconhecer o vício: Aceite que o vício em apostas pode estar impactando negativamente sua vida.'
+            'Esse é o primeiro passo para buscar mudanças\n'
+            '-Procure apoio social: Converse com familiares e amigos de confiança sobre o problema. Eles podem'
+            'oferecer suporte emocional e prático, como por exemplo os Jogadores Anônimos (https://jogadoresanonimos.com.br/)\n'
+            '-Procure ajuda profissional: Um psicólogo ou psiquiatra especializado em vícios pode ajudar a entender'
+            '- Limitar os valores das apostas.\n'
+            '- Fazer pausas nas apostas.\n'
+            '-Eduque-se sobre os riscos: Reflita sobre as probabilidades reais de ganhar e os impactos a longo prazo.'
+            'A compreensão racional dos prejuízos pode ajudar a enfraquecer a impulsividade\n'
+            '- Procurar ajuda profissional, se necessário.\n'
+            'Seu tom deve ser firme, mas empático.\n'
+            'No relatório que você receberá também contém o grau de risco de vício do usuário (RISCO MODERADO ou RISCO ALTO),'
+            'além da idade do usuário. você deve adaptar seu texto e tom considerando essas informações.'
+        )
+
 class InterventionAgent:
-    
     def __init__(self):
-        self.system_message = self.get_system_message
-        self.name = self.get_name
-        self.description = self.get_description
-        self.llm_config = LLM_Config.get_llmconfig()
-        self.agent = self.get_agent()
-
-
-    def get_system_message():
-        return """
-            You are the InterventionAgent in a system designed to help users manage 
-            gambling addiction in sports betting.
-            Your role is to identify situations that require immediate action based on user 
-            behavior and reports.
-            Provide actionable advice and encourage the user to take steps like:
-            - Limiting betting amounts.
-            - Taking breaks from gambling.
-            - Seeking professional help if necessary.
-            Your tone should be firm yet empathetic.
-        """
-
-
-    def get_name():
-        return "InterventionAgent"
-
-    def get_description():
-        return """
-            Identifies situations requiring immediate action based on user behavior and monitoring
-            reports.
-            Delivers firm yet empathetic advice to help users take steps such as setting limits or
-            seeking professional help.
-        """
+        self.agent = AssistantAgent(
+            name="InterventionAgent",
+            system_message=SYSTEM_MESSAGE.strip(),
+            description=DESCRIPTION.strip(),
+            llm_config=LLM_Config.get_llmconfig(),
+        )
 
 
     def get_agent(self):
-        return AssistantAgent(name=self.name,
-                              system_message=self.system_message,
-                              description=self.description,
-                              llm_config=self.get_llmconfig
-                              )
+        return self.agent
