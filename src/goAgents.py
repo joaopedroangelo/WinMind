@@ -10,10 +10,11 @@ from autogen import GroupChat
 from autogen import GroupChatManager
 
 def run(user):
-    user_profile = user.get_user_profile()
-
+    user_profile = user.get_user_profile() # pegando perfil de jogo do usuario
+    # inicializando agentes
     data_agent = CaptureDataAgent.DataCaptureAgent().get_agent()
     data_agent.description = data_agent.description.strip()
+    # entregando perfil de jogo do usuario para o agente de captura de dados
     reply = data_agent.generate_reply(messages=[{"content": user_profile, "role": "user"}])
 
     monitoring_agent = MonitoringAgent.MonitoringAgent().get_agent()
@@ -31,6 +32,7 @@ def run(user):
     direct_communication_agent = DirectCommunicationAgent.DirectCommunicationAgent().get_agent()
     direct_communication_agent.description = direct_communication_agent.description.strip()
 
+    # restrigindo transicoes de agentes
     allowed_transitions = {
         data_agent: [monitoring_agent],
         monitoring_agent: [monitoring_agent, intervention_agent, feedback_agent],
@@ -39,6 +41,7 @@ def run(user):
         critic_agent: [feedback_agent, direct_communication_agent]
     }
 
+    # instanciando grupo de chat
     group_chat = GroupChat(
         agents=[data_agent, monitoring_agent, intervention_agent, feedback_agent, critic_agent, direct_communication_agent],
         messages=[],
@@ -51,6 +54,7 @@ def run(user):
         groupchat=group_chat,
         llm_config=LLM_Config.get_llmconfig(),
     )
+    # iniciando chat
     chat_result = data_agent.initiate_chat(
         group_chat_manager,
         message=reply,
